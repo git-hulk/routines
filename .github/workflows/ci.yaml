@@ -39,7 +39,10 @@ jobs:
           ${{ runner.os }}-go-
 
     - name: Lint
-      run: make lint
+      run: |
+        go get golang.org/x/tools/cmd/goimports
+        go get golang.org/x/tools/cmd/cover
+        make lint
 
     - name: Test
       run: make test

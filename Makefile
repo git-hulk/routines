@@ -23,6 +23,6 @@ lint:
 	@go list ./... | sed -e 's=github.com/git-hulk/routines=.=' | xargs -n 1 goimports -d 2>&1 | tee -a lint.log
 	@[ ! -s lint.log ]
 	@printf $(CCCOLOR)"Checking vet...\n"$(ENDCOLOR)
-	@go list ./... | sed -e 's=github.com/git-hulk/rotuines=.=' | xargs -n 1 go vet 2>&1 | tee -a lint.log
+	@go list ./... | sed -e 's=github.com/git-hulk/rotuines=.=' | xargs -n 1 go vet
 	@[ ! -s lint.log ]
 
