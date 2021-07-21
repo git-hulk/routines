@@ -46,7 +46,7 @@ func main() {
 }
 ```
 
-## Example 1: Async Process Tasks
+## Example 2: Async Process Tasks
 
 For the full example, see: [examples/counter](examples/async/main.go)
 
