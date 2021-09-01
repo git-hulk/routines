@@ -38,6 +38,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-go-
 
+    - uses: docker://sonarsource/sonar-scanner-cli:latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
     - name: Lint
       run: |
         go get golang.org/x/tools/cmd/goimports
